@@ -14,11 +14,13 @@ app.get('/', async (req, res) => {
 
 const getSocialMediaData = async () => {
   const browser = await puppeteer.launch({
-    headless: "new",
+    headless: 'new',
   });
   const page = await browser.newPage();
 
-  const url = 'https://beacons.ai/birobirobiro/mediakit';
+
+  const user = 'birobirobiro';
+  const url = `https://beacons.ai/${user}/mediakit`;
   await page.goto(url, { waitUntil: 'domcontentloaded' });
 
   // Wait for the social media links to be present
@@ -44,4 +46,3 @@ const getSocialMediaData = async () => {
 
   return socialMediaData;
 };
-
