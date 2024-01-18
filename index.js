@@ -14,7 +14,7 @@ app.get('/', async (req, res) => {
 
 const getSocialMediaData = async () => {
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: "new",
   });
   const page = await browser.newPage();
 
